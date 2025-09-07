@@ -2,8 +2,8 @@
 
 ## Demoing the src code
 
-- I have been developing some exercises to help teach unit testing in Fortran. We will be taking a look at one of those now.
-- The src code for this exercise is an implementation of conway’s game of life which you may or may not have heard of
+- This is one of the exercises from the exercises repository I mentioned earlier.
+- The src code for this exercise is an implementation of Conway’s game of life which you may or may not have heard of
 - The important thing to know is 
     - The program reads in a data file representing a starting state.
     - The system is then evolved and printed to the terminal at each time step

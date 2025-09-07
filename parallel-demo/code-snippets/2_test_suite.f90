@@ -1,7 +1,7 @@
     function getTestSuite() result(params)
         type(find_steady_state_test_params), allocatable :: params(:)
 
-        integer :: 1, max_num_ranks = 8
+        integer :: i, max_num_ranks = 8
         integer, dimension(:,:), allocatable :: board
 
         allocate(board(31, 31))
