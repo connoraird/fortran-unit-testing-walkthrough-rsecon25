@@ -2,7 +2,8 @@
 
 ## Demoing the src code
 
-- We will now take a look at an MPI parallelised version of the game of life we have already looked at. Like the serial version this is an exercise within the same repository.
+- We will now take a look at an MPI parallelised version of the game of life we have already looked at. 
+    - Like the serial version this is an exercise within the exercises repository but now we are looking at episode 5.
 - As this is version is parallelised, we can now run this program using mpirun with different numbers of ranks
     - **mpirun -np 1 ./build-cmake/game-of-life ../models/model-1.dat**
     - **mpirun -np 3 ./build-cmake/game-of-life ../models/model-1.dat**
@@ -15,6 +16,9 @@
         - We also have `global_ny` and `global_nx` which represent the size of the `global_input_board`
         - We also have a `base_mpi_communicator` indicating that this is an MPI parallelised subroutine.
         - Finally we have `nprocs` representing the number of MPI processors.
+    - We should now be able to define our custom types for the parallel test
+        - Note that in this exercise the serial test we created earlier is already present however there are a few extra comments, but it's the exact same test.
+            - Therefore, the first task is to update the library we're using from funit to pfunit to give us access to the parallel library.
 
 ## Writing the new test file
 
@@ -28,15 +32,16 @@
 - There is also a change needed for the test case type
     - Again the only real change is to the base type we are extending
     - We now extend MPITestCase
+- We can now update these types in our parallel test
+    - **paste updated types into parallel test**
 
 ### Define test suite 
 
-- We can now update these types in our parallel test
-    - **paste updated types into parallel test**
 - Next we’ll look at the test suite
     - There is no change to the signature or how we populate the board
     - The key change is that we now add a set of parameters for each number of ranks we want to test.
-    - The number of ranks parameters comes from the pfunit base type we have extended - `MPITestParameter`
+    - Again, we are using the default constructor of our custom parameter type.
+        - However, notice that there is an additional input parameter number of ranks parameters comes from the pfunit base type we have extended - `MPITestParameter`
     - We can now add this test suite into our parallel test file
         - **paste test suite into test file**
 
