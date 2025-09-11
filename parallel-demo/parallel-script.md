@@ -49,6 +49,9 @@
 - Looking at the rest of our parallel test, there is not much more that needs to be updated.
     - The constructors do not need to change as we are still using the same parameters in our parallel test as we were in the serial test
     - The only thing we need to update further is the call to find_steady_state to use its new signature within our actual test subroutine.
+        - Here we can see how pFUnit is able to control the number of MPI ranks we use for each test case.
+            - We are calling type bound functions provided by the pFUnit base types we have extended.
+            - These calls return the base mpi communicator to pass into find_steady_state as well as the number of ranks we have requested.
         - **paste call to parallel subroutine into parallel test**
 - We have now fully updated our serial test to be a parallel test of find_steady_state
 
