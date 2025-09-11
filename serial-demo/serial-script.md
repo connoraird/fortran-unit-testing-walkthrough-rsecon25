@@ -21,8 +21,9 @@
         - This simplifies the boilerplate we the users need to add into our tests.
     - We can utilise the test skeleton we saw earlier, however now we have the dependencies filled in
         - **Paste skeleton into new test file**
-- Now we want to define the test parameter type which will contain the inputs and expected outputs of the code we are testing. These inputs and outputs are the important aspects to understand and the implementation should not really influence how we write our test. 
-So let’s take a look at the signature of find_steady_state
+- Now we want to define the test parameter type which will contain the inputs and expected outputs of the code we are testing. 
+    - These inputs and outputs are the important aspects to understand about our src code and the implementation should not really influence how we write our test. 
+- So let’s take a look at the signature of find_steady_state
     - **Open the test code**
     - We can see that there are two inputs, animate and input_board
         - `animate` is something we will likely always want to be false for testing
